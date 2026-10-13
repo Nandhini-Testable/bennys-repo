@@ -1,9 +1,19 @@
-# Paths excluded from git-churn file lists (not from tool runs).
-# One substring per line; matched case-insensitively against repo-relative paths.
+# Substrings excluded from git-churn file lists (case-insensitive path match).
+# Stops Tool Triggering history from flooding Test Case Maintenance evidence.
 Tool Triggering
 Tool Clean
 Tool Invalid
+tool github test data
+tool clean (synthetic
+tool invalid (synthetic
 /tools/
-# Upstream test corpora paths in consolidated git history (test_*.py outside tests/)
-/tool triggering (tool github test data)/
-/tool triggering (synthetic data)/
+/astroid/test_
+/crosshair/
+/dulwich/
+/opengrep/
+/semgrep/
+/_pytest/
+/junitxml
+/libimpl/
+/test_inference
+/test_cli.py
