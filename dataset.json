@@ -16,16 +16,12 @@
   "sourceRoot": "packages/domain/src",
   "package": "orderlab",
   "deployableUnits": [
-    "orderlab-gateway_service",
-    "orderlab-order_service",
-    "orderlab-pricing_service"
+    "orderlab-gateway_service"
   ],
   "workspaces": [
     "packages/domain",
     "packages/contracts",
-    "services/gateway_service",
-    "services/order_service",
-    "services/pricing_service"
+    "services/gateway_service"
   ],
   "toolsWired": 29,
   "toolsActive": 29,
@@ -65,8 +61,6 @@
     },
     "iac": [
       "services/gateway_service/Dockerfile",
-      "services/order_service/Dockerfile",
-      "services/pricing_service/Dockerfile",
       "docker-compose.yml",
       "infra/terraform/main.tf"
     ]

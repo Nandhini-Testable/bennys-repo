@@ -126,11 +126,10 @@ make install      # conda env update -f environment.yml
 python -m orderlab
 ```
 
-Each service is importable on its own:
+The HTTP edge service is importable on its own:
 
 ```
 python -c "from gateway_service import health; print(health())"
-python -c "from pricing_service import quote; print(quote('gold', 600, 'retail', 'US', 100.0))"
 ```
 
 
@@ -154,7 +153,7 @@ python-corpus/  (PY_V312_POETRY_CONDA_MICRO)
 |-- .github/  (1 files)
 |-- language/  (2 files)
 |-- packages/  (23 files)
-|-- services/  (6 files)
+|-- services/  (gateway_service only)
 |-- tests/  (7 files)
 |-- tools/  (wired tool runners + integration)
 |-- .editorconfig
@@ -173,16 +172,21 @@ python-corpus/  (PY_V312_POETRY_CONDA_MICRO)
 
 ### Microservices
 
-Five workspace members. `packages/domain` holds the same byte-identical domain
-as the monolith branches; `packages/contracts` holds the wire schema with no
-third-party dependency at all, so a service whose own dependencies failed to
-install still fails for its own reason. Three services consume both.
+Three workspace members: `packages/domain` (byte-identical domain layer),
+`packages/contracts` (wire schema, no third-party deps), and a single deployable
+edge service `services/gateway_service`. Order and pricing logic remain in the
+domain package; the gateway is the only separate process boundary so parallel
+execution does not fan out across redundant service shells.
 
 `services/gateway_service` is where untrusted input enters. That makes the
 microservices branches the mirror image of the monolith ones for taint
 analysis: the same domain code, reached through a request envelope rather than
 through argv and environment. A tool that scores the two architectures
 differently is telling you about its source model, not about the code.
+
+Do not add `Tool Triggering (Tool Github Test data)/` or the sibling synthetic
+tool corpora to this branch — they are not part of the cell and produce unbounded
+taxonomy evidence (especially git-churn / test-maintenance rows).
 
 
 

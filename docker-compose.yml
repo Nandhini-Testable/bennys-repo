@@ -1,4 +1,5 @@
 # Planted IaC fixture: privileged container, host-wide port binding, inline secret.
+# Single deployable edge service (order/pricing logic stays in packages/domain).
 services:
   gateway_service:
     build: ./services/gateway_service
@@ -7,8 +8,3 @@ services:
     privileged: true
     environment:
       DB_PASSWORD: hunter2
-    depends_on: [order_service, pricing_service]
-  order_service:
-    build: ./services/order_service
-  pricing_service:
-    build: ./services/pricing_service

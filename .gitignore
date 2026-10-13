@@ -24,3 +24,9 @@ htmlcov/
 reports/
 *.log
 .DS_Store
+# Upstream tool corpora must not live on branch roots — they inflate taxonomy
+# evidence (e.g. Test Case Maintenance / git-churn) and are not part of this cell.
+Tool Triggering (Tool Github Test data)/
+Tool Triggering (Synthetic Data)/
+Tool Clean (Synthetic Data)/
+Tool Invalid (Synthetic Data)/
