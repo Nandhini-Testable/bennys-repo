@@ -28,6 +28,9 @@ jobs:
         with:
           fetch-depth: 0        # PyDriller and dulwich need real history
 
+      - name: Remove non-cell tool corpora
+        run: python scripts/prune_non_cell_paths.py
+
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
 

@@ -1,0 +1,6 @@
+# Paths excluded from git-churn file lists (not from tool runs).
+# One substring per line; matched case-insensitively against repo-relative paths.
+Tool Triggering
+Tool Clean
+Tool Invalid
+/tools/

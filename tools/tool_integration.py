@@ -151,6 +151,9 @@ def verify():
 
 
 def run_all():
+    prune_script = os.path.join(ROOT, "scripts", "prune_non_cell_paths.py")
+    if os.path.isfile(prune_script):
+        subprocess.call([sys.executable, prune_script])
     data = load_dataset()
     expected_active = set(t["dir"] for t in data["toolsActiveDetail"])
     expected_dark = set(t["dir"] for t in data["toolsInactive"]) | \

@@ -186,7 +186,10 @@ differently is telling you about its source model, not about the code.
 
 Do not add `Tool Triggering (Tool Github Test data)/` or the sibling synthetic
 tool corpora to this branch — they are not part of the cell and produce unbounded
-taxonomy evidence (especially git-churn / test-maintenance rows).
+taxonomy evidence (especially git-churn / test-maintenance rows). CI and
+``tools/tool_integration.py --run`` call ``scripts/prune_non_cell_paths.py`` to
+drop those trees if they appear; git-churn exclusions are listed in
+``.testable/churn-excludes.txt``.
 
 
 
