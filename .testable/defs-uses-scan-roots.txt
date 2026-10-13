@@ -1,0 +1,2 @@
+# Limit py-all-defs / Beniget DFT finding drill-down to planted analysis fixtures.
+packages/domain/src/orderlab/analysis

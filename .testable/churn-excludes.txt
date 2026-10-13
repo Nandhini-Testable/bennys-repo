@@ -4,3 +4,6 @@ Tool Triggering
 Tool Clean
 Tool Invalid
 /tools/
+# Upstream test corpora paths in consolidated git history (test_*.py outside tests/)
+/tool triggering (tool github test data)/
+/tool triggering (synthetic data)/

@@ -189,7 +189,10 @@ tool corpora to this branch — they are not part of the cell and produce unboun
 taxonomy evidence (especially git-churn / test-maintenance rows). CI and
 ``tools/tool_integration.py --run`` call ``scripts/prune_non_cell_paths.py`` to
 drop those trees if they appear; git-churn exclusions are listed in
-``.testable/churn-excludes.txt``.
+``.testable/churn-excludes.txt``. Optional scan scopes for the hosted workers (not
+the corpus ``tools/*`` runners): ``python-scan-targets.txt`` and
+``defs-uses-scan-roots.txt`` keep lint and DFT evidence samples small while
+fixtures under ``packages/domain/src/orderlab/analysis`` still trigger tools.
 
 
 

@@ -1,0 +1,4 @@
+# Narrow SAST/lint scan roots for taxonomy evidence (full domain unchanged on disk).
+# Platform workers read this; corpus tool runners under tools/ still use packages/domain/src.
+packages/domain/src/orderlab/analysis
+services/gateway_service/src
