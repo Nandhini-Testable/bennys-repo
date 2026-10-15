@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Remove upstream tool corpora if they appear on the branch root.
+""" Remove upstream tool corpora if they appear on the branch root.
 
 Those trees are not part of this evaluation cell. They inflate git-churn and
 taxonomy evidence (Test Case Maintenance, lint drill-down) without helping the
